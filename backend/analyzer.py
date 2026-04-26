@@ -59,10 +59,7 @@ _CLASSIFIER_TRAINING_CALL = re.compile(
 def _get_client() -> genai.Client:
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
-        raise RuntimeError(
-            "GEMINI_API_KEY is not set. Copy backend/.env.example to "
-            "backend/.env and fill in your key."
-        )
+        raise RuntimeError("GEMINI_API_KEY is not set.")
     return genai.Client(api_key=api_key)
 
 
